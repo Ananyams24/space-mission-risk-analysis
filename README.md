@@ -1,182 +1,96 @@
-# 🚀 Space Mission Risk Analysis
+🚀 Space Mission Risk Analysis
+Project at a Glance
 
-## Project at a Glance (60-Second Overview)
+An end-to-end machine learning system that predicts the operational risk of space missions before launch using mission parameters and historical data.
 
-This project is an **end-to-end machine learning system** that predicts the **operational risk of space missions** before launch using historical mission data and mission parameters.
+Input: Mission parameters (CSV / Streamlit Dashboard)
 
-**Input:** Mission parameters (CSV / API / Dashboard)
+Payload mass
 
-* Payload mass
-* Fuel level
-* Launch vehicle
-* Weather conditions
-* Mission type & history
+Fuel level
 
-**Output:**
+Launch vehicle
 
-* Risk score (0–1)
-* Risk category: **Low / Medium / High**
-* Explainability using SHAP (why a mission is risky)
+Weather conditions
 
-**Model:** Random Forest Classifier
-**Best ROC-AUC:** ~0.91
-**Use case:** Decision support for mission planners to identify high-risk missions early
+Mission type & history
 
----
+Output:
 
-## Why This Project Matters
+Risk score (0–1)
 
-Space missions are **high-cost and high-risk**. Even small misjudgments in payload, fuel, or environmental conditions can lead to mission failure.
+Risk category: Low / Medium / High
 
-This system helps:
+SHAP-based explainability
 
-* Detect risky missions **before launch**
-* Support data-driven decision making
-* Improve mission safety and planning
+Model: Random Forest Classifier
+Test ROC-AUC: ~0.87
+Accuracy: ~0.90
+Use case: Decision support for identifying high-risk missions early
 
-This is not just an ML demo — it is a **risk assessment decision-support system**.
+Why It Matters
 
----
+Space missions are high-cost and high-risk. This system helps mission planners:
 
-## System Architecture
+Detect risky missions before launch
 
-```
-        Raw Mission Data (CSV)
-                │
-                ▼
-        Data Preprocessing
-        (Cleaning, Encoding)
-                │
-                ▼
-        Feature Engineering
-                │
-                ▼
-        ML Model Training
-        (Random Forest)
-                │
-                ▼
-        Risk Prediction
-        (Score + Category)
-                │
-                ▼
-        SHAP Explainability
-        (Feature Importance)
-                │
-                ▼
-        Streamlit Dashboard / API
-```
+Make data-driven decisions
 
----
+Improve mission safety and planning
 
-## Tech Stack
+This is a risk assessment decision-support system, not just an ML demo.
 
-* **Python**
-* **Pandas, NumPy** – Data processing
-* **Scikit-learn** – Machine learning
-* **SHAP** – Model explainability
-* **Matplotlib / Seaborn** – Visualization
-* **Streamlit** – Interactive dashboard
+System Architecture
+Raw Data → Preprocessing → Feature Engineering
+        → ML Model (Random Forest)
+        → Risk Prediction
+        → SHAP Explainability
+        → Streamlit Dashboard
 
----
+Tech Stack
 
-## Model Performance
+Python, Pandas, NumPy
 
-| Metric              | Value                          |
-| ------------------- | ------------------------------ |
-| Accuracy            | ~87%                           |
-| ROC-AUC             | ~0.91                          |
-| False Negative Rate | Low (priority for risk models) |
+Scikit-learn
 
-> Evaluation focuses on minimizing missed high-risk missions.
+SHAP
 
----
+Matplotlib
 
-## How to Run the Project
+Streamlit
 
-### 1. Install dependencies
+Model Transparency
 
-```
+Model version: v1.0.0
+
+Training records: ~4,198 missions
+
+Test ROC-AUC tracked in dashboard
+
+Classification report & confusion matrix available
+
+How to Run
 pip install -r requirements.txt
-```
-
-### 2. Train the model
-
-```
 python src/train.py
-```
-
-### 3. Run the dashboard
-
-```
 streamlit run app/streamlit_app.py
-```
 
----
+Limitations & Future Work
 
-## Project Structure
+Synthetic / limited historical data
 
-```
-space-mission-risk-analysis/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── src/
-│   ├── data_loader.py
-│   ├── preprocess.py
-│   ├── train.py
-│   ├── predict.py
-│   └── explain.py
-├── models/
-├── app/
-│   └── streamlit_app.py
-├── tests/
-├── requirements.txt
-└── README.md
-```
+No real-time telemetry
 
----
+Planned:
 
-## Explainability & Trust
+FastAPI deployment
 
-This project uses **SHAP values** to explain:
+CI/CD & automated testing
 
-* Which features contribute most to risk
-* Why a specific mission is classified as high-risk
+Model monitoring & drift detection
 
-Explainability is critical for **high-stakes domains like aerospace**.
+Author
 
----
-
-## Limitations & Future Work
-
-**Current limitations:**
-
-* Synthetic / limited historical data
-* No real-time telemetry integration
-
-**Future improvements:**
-
-* Real mission datasets
-* FastAPI deployment
-* CI/CD with automated testing
-* Model monitoring & drift detection
-
----
-
-## Ideal Use Cases
-
-* Aerospace analytics demos
-* Risk assessment ML systems
-* Final-year / capstone project
-* Entry-level ML engineer or data scientist portfolio
-
----
-
-## Author
-
-**Ananya M S**
+Ananya M S
 Machine Learning & Data Science Enthusiast
 
----
-
-⭐ If you are a recruiter: this project demonstrates **end-to-end ML development, explainability, and deployment readiness**.
+⭐ This project demonstrates applied ML, model evaluation, and explainability in a high-stakes domain.
