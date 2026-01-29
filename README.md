@@ -40,3 +40,18 @@ An end-to-end machine learning system designed to predict the probability of spa
 - **Version Control:** Git & GitHub  
 
 ## 📁 Project Structure
+space-mission-risk-analysis/
+│── data/
+│ ├── raw/
+│ └── processed/
+│── models/
+│── reports/
+│── app.py
+│── requirements.txt
+│── README.md
+
+
+## 🚀 How to Run
+```bash
+pip install -r requirements.txt
+streamlit run app.py
